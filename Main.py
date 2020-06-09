@@ -20,12 +20,20 @@ my randomnotes:
 from Tile import Tile
 import createGame as cg
 
-
+#helper function to keep printing out the board to terminal
+def printEntireBoard(gameBoard):
+    for i in range (5):
+        for j in range (5):
+            gameBoard[i][j].printImage()
+        print()
 
 def main ( ):
 
     gameBoard = cg.createBoard()
-    gameBoard[1][1].printInfo()
+    cg.createBombs(gameBoard)
+    printEntireBoard(gameBoard)
+
+
 
 
 

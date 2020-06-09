@@ -22,9 +22,9 @@ def createBoard():
 
     # 2 for loops to create the 2d array of Tiles
     # tried doing list comprenhension but that didnt work out
-    for i in range(10):
+    for i in range(5):
         row = []
-        for j in range (10):
+        for j in range (5):
             row.append(Tile(i,j,id))
             id = id + 1
         gameBoard.append(row)
@@ -32,13 +32,26 @@ def createBoard():
     return gameBoard
 
 #=============================================================================================================
-# function
+# function to set up the number of bombs on the board
+#takes in the 2dArray of tiles as a argument
+def createBombs( gameBoard):
 
+    #i will need to research the ratio of bombs appearing according to the size of board
+    #i will also need to use a random number generator to generate bombs in different areas
 
+    #for now of testing purposes i will just hardcode some bombs
+    #from the screenshots in the folder  bombs are at
+    # [2][1]
+    # [3][3]
+    # [0][4]
+    gameBoard[2][1].setBombStatus(True)
+    gameBoard[3][3].setBombStatus(True)
+    gameBoard[0][4].setBombStatus(True)
 
-
-
-
+    #pretend we clicked them already for testing purposes
+    gameBoard[2][1].setClicked(True)
+    gameBoard[3][3].setClicked(True)
+    gameBoard[0][4].setClicked(True)
 
 
 

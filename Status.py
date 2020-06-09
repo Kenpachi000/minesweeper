@@ -52,3 +52,16 @@ class Status:
         print("isClick: ", self.isClicked)
         print("isBlank: ", self.isBlank)
         print("numBomb: ", self.numOfBombs)
+
+
+    #first we check if the tile has been clicked or not
+    #once isClick becomes true we have to check which one and then print to screen accordingly
+    def printImage(self):
+        if self.isClicked == False:
+            print(" * ", end = "") #default behavior
+        elif self.isBomb == True:
+            print(" b ", end = "")
+        elif self.isBlank == True:
+            print (" $ ", end = "")
+        else:
+            print(" ", self.numOfBombs, " ", end = "")

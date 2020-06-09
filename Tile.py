@@ -64,3 +64,7 @@ class Tile:
 
     def getNumBomb(self):
         return self.statusOBJ.getNumBomb()
+
+    #print the image onto the terminal. will replace later with the gui
+    def printImage(self):
+        self.statusOBJ.printImage()
