@@ -25,14 +25,19 @@ def main ( ):
             count = count + 1;
         gameBoard.append(row)
 
-    #print out the board in good fashion
-    for i in range(5):
-        for j in range (6):
-            print(gameBoard[i][j].ID, ' ', end ='')
-        print()
+    # #print out the board in good fashion
+    # for i in range(5):
+    #     for j in range (6):
+    #         print(gameBoard[i][j].ID, ' ', end ='')
+    #     print()
 
     #test to see if it lines up
+    gameBoard[3][4].setNumBomb(3)
     gameBoard[3][4].printInfo()
+
+    gameBoard[1][1].setBombStatus(True)
+    gameBoard[1][1].setBlank(False)
+    gameBoard[1][1].printInfo()
 
 
 
