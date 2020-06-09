@@ -11,6 +11,17 @@ depending on the userinput
 #import the Tile class from the Tile.py
 from Tile import Tile
 
+def createTheBord(gameBoard):
+    count = 0
+    for i in range(5):
+        row = []
+        for j in range(6):
+            row.append(Tile(i,j,count))
+            count = count + 1
+        gameBoard.append(row)
+
+
+
 
 def main ( ):
 
@@ -18,12 +29,7 @@ def main ( ):
 
     #below creates a 2d array of Tiles
     gameBoard = []
-    for i in range (5):
-        row = []
-        for j in range (6):
-            row.append(Tile(i,j,count))
-            count = count + 1;
-        gameBoard.append(row)
+    createTheBord(gameBoard)
 
     # #print out the board in good fashion
     # for i in range(5):
@@ -36,7 +42,7 @@ def main ( ):
     gameBoard[3][4].printInfo()
 
     gameBoard[1][1].setBombStatus(True)
-    gameBoard[1][1].setBlank(False)
+    gameBoard[1][1].setBlank(True)
     gameBoard[1][1].printInfo()
 
 
